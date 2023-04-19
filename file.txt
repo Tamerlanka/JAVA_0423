@@ -5,3 +5,5 @@ test for git
 Вношу иззменения в ветке master
 
 Вношу изменения в ветке developer
+Добавляю в ветке developer
+
