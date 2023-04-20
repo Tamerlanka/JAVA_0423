@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Аутентификация</title>
+    <link th:href="@{/css/index.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h3>Вход</h3>
+<form method="post" action="/process_login"> <!-- /process_login адрес для обязательно отправки формы для Spring Security -->
+<!--    поля должны обязательно называться username и password,
+это зарезервированные наименования чтобы Spring Security смог
+получить данные из формы и сравнить с данными в БД -->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <label for="username">Введите логин: </label>
+    <input type="text" placeholder="Введите логин" name="username" id="username">
+    <br>
+    <label for="password">Введите пароль: </label>
+    <input type="password" placeholder="Введите пароль" name="password" id="password">
+    <input type="submit" value="Войти">
+</form>
+    <div th:if="${param.error}" style="color:red">  <!-- Отображать если придет параметр с error -->
+        Неверный логин или пароль!
+</div>
+<a href ="/registration">Регистрация</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+<h3>Первое приложение с использованием Spring Security</h3>
+
+<!-- Актуальная реализация логаута -->
+<form method="post" th:action="@{/logout}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <button type="submit">Выйти</button>
+</form>
+</body>
+</html>
